@@ -18,6 +18,10 @@ class App < Sinatra::Base
     erb :not_found
   end
 
+  error Sinatra::NotFound do
+    erb :not_found
+  end
+
   get '/' do
     clear_widget_code
     erb :index

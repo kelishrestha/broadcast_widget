@@ -1,9 +1,9 @@
-# Sinatra Template
-Single Page Application with Sinatra
+# Broadcast Widget
+Test broadcast widget with Code
 
 ## Technology
 
-1. Ruby-2.5.3
+1. Ruby-2.7.1
 2. Sinatra
 
 ### Minimal Design

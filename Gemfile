@@ -5,13 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'sinatra'
 gem 'shotgun'
 gem 'puma'
 gem 'httparty'
 gem 'sinatra-r18n'
 gem 'json'
+
 # Sanitizer
 gem 'rails-html-sanitizer'
 

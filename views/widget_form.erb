@@ -36,13 +36,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <%= @type == 'realtime' ? 'active' : '' %>">
           <a class="nav-link" href="/widget_form?type=realtime">Real Time Broadcast</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <%= @type == 'delayed' ? 'active' : '' %>">
           <a class="nav-link" href="/widget_form?type=delayed">HLS Broadcast</a>
         </li>
       </ul>
@@ -50,35 +50,19 @@
   </nav>
   <div class="vertical-center vh-100 text-center">
     <div class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal">Choose Type of Broadcast</h1>
-      <hr>
-      <div class="card-deck">
-        <div class="card">
-          <a href="/widget_form?type=realtime">
-            <div class="card-body">
-              <h5 class="card-title">Real Time Broadcast</h5>
-              <p class="card-text">
-                This type of broadcast enables many clients to publish and subscribe to each others' audio-video streams
-                in real time.
-              </p>
-            </div>
-          </a>
+      <% if @type == 'realtime' %>
+        <h1 class="h3 mb-3 font-weight-normal">Real Time Broadcast Widget</h1>
+      <% else %>
+        <h1 class="h3 mb-3 font-weight-normal">HLS Broadcast Widget</h1>
+      <% end %>
+      <form action="/widget" method="post">
+        <input type="hidden" class="form-control" id="exampleFormControlInput1" value=<%= @type %> name="type">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Paste widget code</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
         </div>
-        <div class="card">
-          <a href="/widget_form?type=delayed">
-            <div class="card-body">
-              <h5 class="card-title">HLS Broadcast</h5>
-              <p class="card-text">
-                This type of broadcast lets you share an HTTP live streaming (HLS) stream or an RTMP stream with large
-                numbers of viewers. The HLS or RTMP stream is a single video composed of the individual streams
-                published to the OpenTok session. For details, see
-                <a href="https://tokbox.com/developer/guides/broadcast/live-streaming/">Live streaming broadcasts</a>.
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <hr>
+         <button type="submit" class="btn btn-primary mb-2">Watch Broadcast</button>
+      </form>
     </div>
   </div>
   <footer class="footer mt-auto py-3">

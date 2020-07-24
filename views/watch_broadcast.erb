@@ -48,38 +48,8 @@
       </ul>
     </div>
   </nav>
-  <div class="vertical-center vh-100 text-center">
-    <div class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal">Choose Type of Broadcast</h1>
-      <hr>
-      <div class="card-deck">
-        <div class="card">
-          <a href="/widget_form?type=realtime">
-            <div class="card-body">
-              <h5 class="card-title">Real Time Broadcast</h5>
-              <p class="card-text">
-                This type of broadcast enables many clients to publish and subscribe to each others' audio-video streams
-                in real time.
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/widget_form?type=delayed">
-            <div class="card-body">
-              <h5 class="card-title">HLS Broadcast</h5>
-              <p class="card-text">
-                This type of broadcast lets you share an HTTP live streaming (HLS) stream or an RTMP stream with large
-                numbers of viewers. The HLS or RTMP stream is a single video composed of the individual streams
-                published to the OpenTok session. For details, see
-                <a href="https://tokbox.com/developer/guides/broadcast/live-streaming/">Live streaming broadcasts</a>.
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <hr>
-    </div>
+  <div class="widget">
+    <%= @content %>
   </div>
   <footer class="footer mt-auto py-3">
     <div class="container">

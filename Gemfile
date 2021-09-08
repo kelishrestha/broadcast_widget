@@ -12,9 +12,6 @@ gem 'httparty'
 gem 'sinatra-r18n'
 gem 'json'
 
-# Sanitizer
-gem 'rails-html-sanitizer'
-
 group :development, :test do
   gem 'pry'
 end

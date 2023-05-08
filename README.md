@@ -3,7 +3,7 @@ Test broadcast widget with Code
 
 ## Live
 
-You can view the live app [here](https://broadcast-widget.herokuapp.com/)
+You can view the live app [here](https://broadcast-widget.onrender.com/)
 ## Technology
 
 1. Ruby-2.7.1
@@ -23,6 +23,10 @@ bundle install
 ### Run development server
 ```
 shotgun
+```
+OR
+```
+bundle exec puma
 ```
 
 Run your server at
